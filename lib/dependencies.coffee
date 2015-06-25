@@ -33,7 +33,6 @@ module.exports =
             queryString: "dependency for #{text}"
             function: ->
               reader.generateSVG(json, text).then (svg) -> createView(json, svg)
-        console.log items
         resolve(items)
 
     function: -> promise
