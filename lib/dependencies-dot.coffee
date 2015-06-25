@@ -26,28 +26,3 @@ module.exports =
 		fs.readFile file, (_, contents) ->
 			console.log file, contents
 			resolve JSON.parse(contents.toString())
-
-# generateFor: (node) ->
-#   @path ?= atom.project.getPath() + '/dependencies.json'
-#   @json ?= @readFile @path
-#
-#   @generateSVG(@json, node).then (svg) =>
-#     @panel.destroy() if @view
-#     @view = $$ -> @div => 'f' #unless @view
-#     @view.html(svg).attr('style', 'overflow: scroll;')
-#
-#     window.svg = svg
-#     window.view = @view
-#
-#     @panel = atom.workspace.addTopPanel(item: @view)
-#     that = this
-#     @view.find('g.node').on 'click', ->
-#       itemName = $(this).find('title').html()
-#       that.generateFor(itemName)
-#   .catch (e) ->
-#     window.e = e
-#     console.log(e)
-#
-# unGenerate: ->
-#   @path = @json = undefined
-#   @panel.destroy() if @panel
